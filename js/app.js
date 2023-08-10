@@ -36,15 +36,23 @@ suggestionsUl.addEventListener("click", (e) => {
 });
 searchForm.onsubmit = (e) => {
   e.preventDefault();
+
+  currentCity = cities.find((city) =>
+    city.name.toLowerCase().startsWith(searchInput.value.toLowerCase())
+  );
   if (!currentCity) {
-    currentCity = cities.find((city) =>
-      city.name.toLowerCase().startsWith(searchInput.value.toLowerCase())
-    );
+    searchInput.value = "";
+    return;
   }
   closeModalBtn.click();
 };
 closeModalBtn.onclick = async () => {
   closeSuggestions();
+  cityTitle.innerHTML = `
+  <div class="spinner-border text-center text-success" role="status">
+     <span class="sr-only"></span>
+  </div>`;
+
   if (!currentCity) {
     return;
   }
