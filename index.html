@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar bg-body-tertiary" data-bs-theme="dark">
+        <div class="container">
+          <a class="p-3 text-success h1 navbar-brand">Weather</a>
+
+          <a
+            class="h4 p-3 text-success text-decoration-none"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            id="modal-open-btn"
+          >
+            <i class="bi bi-search"></i>
+          </a>
+        </div>
+        <!-- Modal -->
+        <div
+          class="modal bg-dark bg-opacity-75 fade position-fixed top-0 start-0"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="position-relative">
+            <button
+              id="modal-close-btn"
+              type="button"
+              class="btn-close ms-5 h3 position-absolute"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+            <div class="text-white" id="history"></div>
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <form id="search-form" action="#">
+                    <input id="search-input" type="text" />
+                  </form>
+                  <div class="suggestions">
+                    <ul id="suggestions-ul"></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!--Current city-->
+    <section class="mt-5">
+      <div class="container">
+        <h3 id="city-title" class="display-6 text-center"></h3>
+        <div class="d-flex flex-wrap justify-content-between">
+          <div class="col-12 col-xl-8">
+            <canvas class="h-100" id="chart-daily"></canvas>
+          </div>
+          <div class="col-12 col-xl-3">
+            <h5 class="mb-2 text-center">Today</h5>
+            <div id="today"></div>
+          </div>
+        </div>
+        <h5 class="mt-5 mb-5 text-center">Next Week</h5>
+        <div
+          id="cards"
+          class="mx-auto text-center d-flex flex-wrap justify-content-center"
+        ></div>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

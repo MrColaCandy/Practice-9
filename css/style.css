@@ -1,0 +1,88 @@
+.modal-content {
+  transform: translateY(calc(50vh - 60px));
+}
+.modal-dialog input {
+  width: 450px !important;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 3px solid seagreen;
+  padding-bottom: 16px;
+  z-index: 10;
+}
+
+.modal-dialog .modal-content {
+  border: none;
+  outline: none;
+  color: wheat;
+}
+
+.modal-content .suggestions {
+  height: 0px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: height 500ms;
+}
+.modal-content .suggestions ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.modal-content .suggestions ul li {
+  border-bottom: 1px solid seagreen;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.card {
+  position: relative;
+  max-height: 400px;
+  min-width: 200px;
+
+  margin: 5px 5px;
+  text-align: center;
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 0.020133053221288555) 0%,
+    rgb(144, 235, 255) 100%
+  );
+}
+.card * {
+  margin: 6px;
+  padding: 14px;
+  font-size: small;
+}
+
+.card img {
+  position: absolute;
+  width: 100px;
+  border-radius: 100%;
+  top: -30px;
+  left: -30px;
+  width: 100px;
+  top: 0px;
+  left: 0px;
+}
+
+#today .card {
+  max-width: 600px;
+  margin: 16px auto;
+  background: rgb(34, 193, 195);
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 0.020133053221288555) 0%,
+    rgb(144, 244, 255) 100%
+  );
+}
+#history {
+  position: absolute;
+  left: 50%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  transform: translateY(-30px) translateX(-50%);
+}
