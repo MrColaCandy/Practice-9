@@ -196,7 +196,7 @@ function drawCards(data) {
 function createCardHTML(day) {
   return `
   <div class="card  text-center">
-  <img class="card-img-top" src="../assets/images/${
+  <img class="card-img-top" src="./assets/images/${
     day.icon
   }.png" alt="Card image cap">
     <div class="card-body">
@@ -228,7 +228,7 @@ function drawHistory(his) {
 
     const card = `
   <div  class="card  text-center">
-  <img class="card-img-top" src="../assets/images/${
+  <img class="card-img-top" src="./assets/images/${
     condition.icon
   }.png" alt="Card image cap">
     <div class="card-body">
